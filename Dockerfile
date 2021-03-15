@@ -1,15 +1,17 @@
-FROM debian:stretch
+FROM debian:buster
 
 RUN apt-get update
 RUN apt-get install python3-pip python3-venv git
 
-RUN mkdir /path/to/venv
-RUN cd /path/to/venv
+RUN mkdir /cryptoproject
+RUN mkdir /cryptoproject/code
 
-RUN python3 -m venv /path/to/venv
+RUN git -C /cryptoproject/code https://github.com/davagnina/cryptoproject.git
 
-RUN mkdir code/
-RUN git -C code/ 
-RUN source bin/activate
+RUN python3 -m venv /cryptoproject
 
-RUN pip3 install -r dependencies.txt
+RUN source /cryptoproject/bin/activate
+
+RUN pip3 install -r code/dependencies.txt
+
+EOF
