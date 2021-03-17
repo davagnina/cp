@@ -12,6 +12,8 @@ RUN apt-get install -y --quiet libmariadb3 libmariadb-dev
 RUN apt-get install -y --quiet python3-pip python3-dev
 RUN apt-get install -y --quiet git cifs-utils
 
+RUN cp /usr/include/x86_64-linux-gnu/sys/io.h /usr/include
+
 # create directories for the code
 RUN mkdir /app
 RUN cd /app
