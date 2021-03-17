@@ -10,13 +10,13 @@ RUN apt-get update
 # install packages needed
 RUN apt install -y libmariadb3 libmariadb-dev
 RUN apt install -y python3-pip python3-dev
-RUN apt-get install -y git gcc
+RUN apt-get install -y git kernel-package
 
 # create directories for the code
-RUN mkdir /cp
-RUN cd /cp
+RUN mkdir /app
+RUN cd /app
 RUN git clone https://github.com/davagnina/cp.git
-WORKDIR /cp
+WORKDIR /app
 
 # upgrade and install python modules
 RUN pip3 install --upgrade pip
