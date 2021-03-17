@@ -10,7 +10,7 @@ RUN apt-get update
 # install packages needed
 RUN apt install -y libmariadb3 libmariadb-dev
 RUN apt install -y python3-pip python3-dev
-RUN apt install -y git gcc
+RUN apt-get install -y git gcc
 
 # create directories for the code
 RUN mkdir /cp
